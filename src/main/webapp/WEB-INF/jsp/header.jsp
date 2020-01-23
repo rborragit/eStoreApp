@@ -1,4 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,7 +40,7 @@
             <li><a class="nav-link" href="#">Contact Us</a></li>
          </ul>
         <ul class="nav navbar-nav navbar-right">
-           <li><a class="nav-link" href="#"><span class="glyphicon glyphicon-user"></span>Your Account </a></li>
+           <li><a class="nav-link" href="/user/login"><span class="glyphicon glyphicon-user"></span>Your Account </a></li>
            <li><a class="nav-link" href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart </a></li>         
         </ul> 
       </div>
