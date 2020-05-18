@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.ran.model.User;
 
@@ -17,6 +19,7 @@ import com.ran.model.User;
 public class UserController {
 	
 	@GetMapping("/login")
+	
 	public String displaylogin(Model model) {
 		
 		User user = new User();
@@ -24,15 +27,17 @@ public class UserController {
 		return "user_login";
 	}
 	
-	@PostMapping("/login")
-	public String processlogin(@Valid @ModelAttribute("user") User user,Errors errors) {
+	@PostMapping("/login")	
+	public String processlogin(@Valid @ModelAttribute("user") User user,Errors errors,Model model) {
 		
-//		System.out.println("pwd " + user.getPassword());
+   
 		if (errors.hasErrors()) {
 			return "user_login";
 		}
-		
-		return "home";
+		System.out.println("pwd" + user.getPassword());	
+	//return "home";
+	 //  return "forward:/home";	
+       return "redirect:/home";
 	}
 
 }

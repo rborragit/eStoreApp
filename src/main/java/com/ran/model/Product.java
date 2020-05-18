@@ -1,10 +1,15 @@
 package com.ran.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.stereotype.Component;
 
-//@Component
+@Entity
 public class Product {
 	
+	@Id
 	private String id;
 	private String name;
 	private String description;
@@ -22,7 +27,7 @@ public class Product {
 		this.seller = seller;
 	}
 	
-	
+	public Product() {};
 
 
 	public String getId() {
